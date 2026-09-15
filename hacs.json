@@ -1,0 +1,6 @@
+{
+  "name": "Insect Trap Card",
+  "homeassistant": "2026.9.0",
+  "render_readme": true,
+  "filename": "insect-trap-card.js"
+}
