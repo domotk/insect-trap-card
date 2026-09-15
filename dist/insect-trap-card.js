@@ -671,10 +671,10 @@ class InsectTrapCard extends HTMLElement {
         ? { t: L("due"), c: COLOR.warn }
         : null;
 
-    // Nights or hours, whichever the card is set to. "auto" keeps the old
-    // behaviour: nights when the integration can work them out, hours when it
-    // cannot. "nights" falls back to hours for that same reason — a refill with
-    // no history yet has no pace to divide by.
+    // Nights or hours, whichever the card is set to. The integration answers in
+    // nights whenever there is a refill now — measured once the trap has enough
+    // history, taken from the box until then — so the fall back to plain hours
+    // survives only for a sensor from before that, which would send back null.
     const prefiereHoras = this._config.time_unit === "hours";
     const queda = !hasRefill
       ? L("no_refill")
