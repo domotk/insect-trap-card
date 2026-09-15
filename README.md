@@ -10,7 +10,10 @@ The Lovelace card for [Insect Traps][integration]. It draws the appliance itself
 colour of the mode, vapour rising only while it is working — so a glance tells
 you whether the trap is doing anything and how much life it has left.
 
-![The same drawing at four levels of refill](docs/frames.png)
+![The card with the trap running](docs/card-on.jpg)
+
+*Running: the indicator is lit in the colour of the mode and vapour rises
+from the top. The bottle is drawn at the level the refill is really at.*
 
 ## Why
 
@@ -30,6 +33,11 @@ without being read: you notice the trap is off from across the room.
 - **One tap** switches the trap; the lower band opens its history; the button
   registers a new refill without leaving the dashboard.
 - **Visual editor**, English and Spanish.
+
+![The same trap, switched off](docs/card-off.jpg)
+
+*The same trap, off: the indicator goes grey and the vapour stops. A
+diffuser that is on should never look like one that is not.*
 
 ## Installation
 
@@ -69,6 +77,11 @@ The entity picker only offers sensors that can actually be drawn. The
 integration gives every trap six sensors and only one of them carries the
 refill.
 
+![A shopping button appears when buy_url is set](docs/card-buy.jpg)
+
+*`buy_url` adds a second button to the brand band, for the evening the
+bottle runs out and the shop is already closed.*
+
 ### Interaction
 
 | Gesture | Result |
@@ -78,11 +91,27 @@ refill.
 | Tap the refill button | The "new refill" sheet |
 | Tap the cart button | Your `buy_url` |
 
+## Registering a refill
+
+The button on the brand band opens a sheet that asks about the **refill** and
+nothing else — which one, what it is for, and how long the box says it lasts.
+The brand, the model and the mode belong to the appliance and are changed in
+the integration's options.
+
+![The new refill sheet](docs/refill-sheet.jpg)
+
+The dropdown is filled from the integration's catalogue, and the lifetime is
+worked out in front of you: a box rated in nights is multiplied by the hours
+a night means in your house, so what the trap counts against is a number of
+running hours rather than a number of days.
+
 ## The artwork
 
 Each appliance is one PNG: a horizontal strip of frames of the same drawing with
 the bottle at different levels. The catalogue says what level each frame depicts,
 so the card shows the nearest one and a strip may hold any number of them.
+
+![One strip, four levels](docs/frames.png)
 
 Two details make it work:
 
